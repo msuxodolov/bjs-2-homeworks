@@ -17,12 +17,12 @@ function getArrayParams(...arr) {
   return {
     min: min,
     max: max,
-    avg: avg
+    avg: +avg
   };
 }
-//console.log(getArrayParams(-99, 99, 10)); // { min: -99, max: 99, avg: 3.33 }
-//console.log(getArrayParams(1, 2, 3, -100, 10)); // { min: -100, max: 10, avg: -16.80 }
-//console.log(getArrayParams(5));
+console.log(getArrayParams(-99, 99, 10)); // { min: -99, max: 99, avg: 3.33 }
+console.log(getArrayParams(1, 2, 3, -100, 10)); // { min: -100, max: 10, avg: -16.80 }
+console.log(getArrayParams(5));
 
 function summElementsWorker(...arr) {
   if (arr.length === 0) {
