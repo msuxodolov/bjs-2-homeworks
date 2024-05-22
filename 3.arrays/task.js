@@ -8,12 +8,9 @@ function compareArrays(arr1, arr2) {
 //console.log(compareArrays([8, 1, 2], [8, 1, 2])) // true
 
 function getUsersNamesInAgeRange(users, gender) {
-	const totaUser = users.filter(user => user.gender === gender)
-	if (totaUser.length === 0) {
-		return 0
-	}
-	const totalAge = totaUser.reduce((acc, user) => acc + user.age, 0)
-	return totalAge / totaUser.length
+	return users.filter(user => user.gender === gender)
+    .map(user => user.age)
+    .reduce((acc, age, index, arr) => acc + age / arr.length, 0);
 }
 const people = [{
 		firstName: "Александр",
