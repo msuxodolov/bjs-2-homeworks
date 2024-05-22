@@ -19,10 +19,9 @@ Student.prototype.getAverage = function() {
 
 
 Student.prototype.exclude = function(reason) {
-	delete this.subject;
-	delete this.marks;
-	this.excluded = reason;
-
+ this.subject = undefined;
+ this.marks = [];
+ this.excluded = reason;
 }
 
 let student1 = new Student("Василиса", "женский", 19);
@@ -37,4 +36,5 @@ let student2 = new Student("Артём", "мужской", 25);
 student2.setSubject("Geometry");
 student2.exclude('плохая учёба')
 console.log(student2)
+
 // {name: "Артём", gender: "мужской", age: 25, excluded: "плохая учёба"}
